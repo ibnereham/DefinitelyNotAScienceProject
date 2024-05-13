@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>$(document).ready(function () { 
+        $("form").submit(function (event) { 
+            event.preventDefault();
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="mainnavbar">
+            <!-- Logo -->
+            <div id="logocontainer">
+                <img src="logomain.png" alt="logo" id="logoimg">
+            </div>
+<!-- nav menu list open -->
+            <div id="link-container">
+                <h3 class="menu-item"><a href="index.html" class="menu-text">HOME</a></h3>
+                <h3 class="menu-item"><a href="ui.html" class="menu-text">AI CHAT</a></h3>
+                <h3 class="menu-item"><a href="#" class="menu-text">ABOUT US</a></h3>
+                <h3 class="menu-item"><a href="#" class="login"> <i class="fa-solid fa-user"></i> Log In </a></h3>
+            </div>
+<!-- nab menu list close -->
+        </div>
+<!-- Vab bar Section close -->
+
+        <div id="chatbox">
+            <h1 id="maintext">Personal Study Tutor</h1>
+            <div class="chat-history" id="chat-history">
+            </div>
+
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message" placeholder="Type your message...">
+            <button id="uploadImageButton"  class="uplode">Upload</button>
+            <button id="send" type="submit">Send</button>
+            <input type="file" id="imageUpload" style="display: none;" class="uplode">
+            
+        </div>
+
+    </div>
+</body>
+<script src="ui.js"></script>
+</html>
