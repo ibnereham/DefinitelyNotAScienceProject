@@ -12,16 +12,14 @@ def GetRandomWord(filename="words.txt"):
             words = file.readlines()
     except FileNotFoundError:
         print(f"File '{filename}' not found.")
-        try:
-            with open(filename, "x") as file:
-                pass 
-        except FileExistsError:
-            pass
     words = [word.strip() for word in words]
-    return random.choice(words)
 
- 
+    arr = []
+    for i in [1, 2, 3, 4, 5]:
+        # Call insert method with index and value
+        arr.insert(i - 1, f"{str(i)} {random.choice(words)}")  # Adjust index for 0-based indexing
 
+    return arr
 
 app = Flask(__name__)
 CORS(app)
@@ -61,7 +59,7 @@ def upload_image():
 @app.route('/word', methods=['POST'])
 def word():
     word=GetRandomWord()
-    return word
+    return jsonify(word)
 
 @app.route('/message', methods=['POST'])
 def message():
