@@ -4,8 +4,21 @@ from solver import solve
 import os
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
-
-
+import random
+def GetRandomWord(filename="words.txt"):
+    words = []
+    try:
+        with open(filename, "r") as file:
+            words = file.readlines()
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+        try:
+            with open(filename, "x") as file:
+                pass 
+        except FileExistsError:
+            pass
+    words = [word.strip() for word in words]
+    return random.choice(words)
 
  
 
@@ -45,6 +58,11 @@ def upload_image():
        
     except Exception as e:
         return str(e), 500
+@app.route('/word', methods=['POST'])
+def word():
+    word=GetRandomWord()
+    return word
+
 @app.route('/message', methods=['POST'])
 def message():
     if 'message' not in request.form:
