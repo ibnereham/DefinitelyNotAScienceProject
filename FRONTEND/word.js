@@ -13,35 +13,23 @@ async function getWords() {
     const data = await response.json();
     console.log(data)
     if (Array.isArray(data)) {
-      for (const word of data) {
-        switch (word){
-            case word.startsWith("1"):
-                console.log(word)
-                x = document.createElement("h3");
-                x.textContent = word;
-                word1.addChild(x)
-            case word.startsWith("2"):
-                console.log(word)
-                x = document.createElement("h3");
-                x.textContent = word;
-                word2.addChild(x)
-            case word.startsWith("3"):
-                console.log(word)
-                x = document.createElement("h3");
-                x.textContent = word;
-                word3.addChild(x)
-            case word.startsWith("4"):
-                console.log(word)
-                x = document.createElement("h3");
-                x.textContent = word;
-                word4.addChild(x)
-            case word.startsWith("5"):
-                console.log(word)
-                x = document.createElement("h3");
-                x.textContent = word;
-                word5.addChild(x)
-        }
-      }
+      const one = document.createElement("h3")
+      const two = document.createElement("h3")
+      const three = document.createElement("h3")
+      const four = document.createElement("h3")
+      const five = document.createElement("h3")
+
+      one.textContent= data[0]
+      two.textContent= data[1]
+      three.textContent= data[2]
+      four.textContent= data[3]
+      five.textContent= data[4]
+
+      word1.appendChild(one)
+      word2.appendChild(two)
+      word3.appendChild(three)
+      word4.appendChild(four)
+      word5.appendChild(five)
     } else {
       console.error('Error: Data is not an array.');
     }
