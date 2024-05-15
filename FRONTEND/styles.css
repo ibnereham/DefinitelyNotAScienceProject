@@ -115,20 +115,24 @@ body{
     position: relative;
 }
 #main-container #start-button:hover{
-    background-color: #2668db;
-    border: 2px solid #2668db;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
     box-shadow: 0 0 5px #ffffff,
                 0 0 20px #ffffff,
                 0 0 50px #ffffff,
                 0 0 100px #ffffff;
 }
 #main-container #start-button a{
+    color: white;
     text-decoration: none;
-    color: #fff;
     position: absolute;
     display: block;
     left: 35px;
     top: 12px;
+    transition: 500ms;
+}
+#main-container #start-button a:hover{
+    color: black;
 }
 /*  button close */
 
