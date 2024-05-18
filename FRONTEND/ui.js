@@ -51,7 +51,7 @@ async function sendMessage(message){
  const botMessagePlaceholder = document.createElement('div');
  botMessagePlaceholder.classList.add('chat-message', 'bot-message', 'message-placeholder')
  let placeholderText = document.createElement('p');
- placeholderText.textContent = 'Waiting for AI...';
+ placeholderText.textContent = 'Waiting for Tutor...';
  placeholderText.classList.add('bot-message','message-text')
  botMessagePlaceholder.appendChild(placeholderText);
  chatHistory.appendChild(botMessagePlaceholder);

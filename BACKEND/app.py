@@ -8,7 +8,7 @@ import random
 def GetRandomWord(filename="words.txt"):
     words = []
     try:
-        with open(filename, "r") as file:
+        with open(filename, "r", encoding="utf-8") as file:
             words = file.readlines()
     except FileNotFoundError:
         print(f"File '{filename}' not found.")
@@ -17,7 +17,7 @@ def GetRandomWord(filename="words.txt"):
     arr = []
     for i in [1, 2, 3, 4, 5]:
         # Call insert method with index and value
-        arr.insert(i - 1, f"{str(i)} {random.choice(words)}")  # Adjust index for 0-based indexing
+        arr.insert(i - 1, f"{str(i)}. {random.choice(words)}")  # Adjust index for 0-based indexing
 
     return arr
 
